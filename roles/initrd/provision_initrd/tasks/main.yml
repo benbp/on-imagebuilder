@@ -17,6 +17,9 @@
             dest=/etc/initramfs-tools/hooks/{{ item }} mode=0755
   with_items: initrd_include_binaries
 
+- name: Add bnx2x drivers
+  copy: src=bnx dest=/etc/initramfs-tools/hooks/bnx mode=0755
+
 - name: Add 1_network script to local-top
   copy: src=1_network dest=/etc/initramfs-tools/scripts/local-top/ mode=0755
 
